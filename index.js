@@ -11,18 +11,22 @@ xhr.onreadystatechange = () => {
 
         for (let i = 0; i < JSON.parse(xhr.responseText).length; i++) {
             let x = `
-    <div>
-    <div class="blog_title">
-    <b>title:</b>${JSON.parse(xhr.responseText)[i].title}
+    <div class="card text-center p-4 m-4">
+    <div class="card-block">
+    <div class="card-title h6">
+    ${JSON.parse(xhr.responseText)[i].title}
     </div>
-    <div class="blog_body">
- <b>body</b>   ${JSON.parse(xhr.responseText)[i].body}
+    <div class="card-text">
+   ${JSON.parse(xhr.responseText)[i].body}
+    </div>
+    <a href="#" class="btn btn-primary mt-4">Find out more</a>
+
     </div>
     </div>
     `
 
             let div = document.createElement('div');
-
+            div.setAttribute("class", "col-md-4");
 
             div.innerHTML = x;
 
